@@ -1,8 +1,11 @@
+package kuDialogTest;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.naming.spi.DirStateFactory.Result;
 import javax.swing.*;
+import kuDialogTest.kuCppWrapperTest;
 
 public class kuDialogTest extends JDialog {
 	
@@ -10,6 +13,7 @@ public class kuDialogTest extends JDialog {
 	JLabel  		 ResultLabel      = new JLabel();
 	JButton 		 Button1 	   	  = new JButton();
 	kuActionListener kkActionListener = new kuActionListener();
+	kuCppWrapperTest kkWrapperTest = new kuCppWrapperTest();
 	
 	public kuDialogTest() {
 		// TODO Auto-generated constructor stub
@@ -47,7 +51,10 @@ public class kuDialogTest extends JDialog {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == Button1)
 			{
-				ResultLabel.setText(Button1.getName() + " is clicked");
+				//ResultLabel.setText(Button1.getName() + " is clicked");
+				
+				int aa = kkWrapperTest.kuWrapperAddTest(5, 3);
+				ResultLabel.setText("5 + 3 is " + aa);
 			}
 		}
 	}
